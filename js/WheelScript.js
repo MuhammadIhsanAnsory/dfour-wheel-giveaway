@@ -1,9 +1,9 @@
-const WHEEL_RADIUS = 270;
+const WHEEL_RADIUS = 300;
 const TEXT_FONT_SIZE = 22;
 
 // Create new wheel object specifying the parameters at creation time.
 let theWheel = new Winwheel({
-    'numSegments': 10,     // Specify number of segments.
+    'numSegments': 12,     // Specify number of segments.
     'outerRadius': WHEEL_RADIUS,   // Set outer radius so wheel fits inside the background.
     'textFontSize': TEXT_FONT_SIZE,    // Set font size as desired.
     'segments':        // Define segments including colour and text.
@@ -11,29 +11,21 @@ let theWheel = new Winwheel({
           { fillStyle: '#FFBF86', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FFF47D', text: 'Diskon Rp. 20.000,-', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FFBF86', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFF47D', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFBF86', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFF47D', text: 'Diskon hair color 20%', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFBF86', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FFF47D', text: 'Diskon 5%', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFBF86', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFF47D', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFBF86', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFF47D', text: 'Diskon 20% hair color', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FFBF86', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#ffd84b', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#f5ac27', text: 'Diskon Rp. 20.000,-', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#f2888b', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#f5ac27', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#ffd84b', text: 'Diskon 5%,-', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#e07477', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#ffd84b', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#f7ac00', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          // { fillStyle: '#ea8b6d', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFBF86', text: 'Diskon hair mask 50%', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFF47D', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFBF86', text: 'Diskon 20% hair color', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFF47D', text: 'Gratis cuci rambut', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFBF86', text: 'Diskon smoothing 30%', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FFF47D', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
         ],
     'animation':           // Specify the animation to use.
     {
         'type': 'spinToStop',
-        'duration': 22,
-        'spins': 10,
+        'duration': 18,
+        'spins': 8,
         'callbackFinished': alertPrize,
     }
 });
@@ -46,7 +38,7 @@ function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text.
     // You would probably want to do something more interesting with this information.
     document.getElementById('info').innerHTML = "Selamat! Anda mendapatkan :  <br> " + indicatedSegment.text + ' !!!';
-    alert("Selamat !!! Anda mendapatkan:" + indicatedSegment.text);
+    alert("Selamat !!! Anda mendapatkan : " + indicatedSegment.text);
     resetWheel();
 }
 // =======================================================================================================================
@@ -171,59 +163,59 @@ function deleteName(key) {
 // -------------------------------------------------------
 // Event listener for submiting a name from the input.
 // -------------------------------------------------------
-const form = document.querySelector('.js-form');
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    const input = document.querySelector('.js-name-input');
+// const form = document.querySelector('.js-form');
+// form.addEventListener('submit', event => {
+//     event.preventDefault();
+//     const input = document.querySelector('.js-name-input');
 
-    const text = input.value.trim();
-    if (text !== '') {
-        addName(text);
-        input.value = '';
-        input.focus();
-    }
-});
+//     const text = input.value.trim();
+//     if (text !== '') {
+//         addName(text);
+//         input.value = '';
+//         input.focus();
+//     }
+// });
 
 // -------------------------------------------------------
 // Event listener for deleting a name from the list.
 // -------------------------------------------------------
-const list = document.querySelector('.js-name-list');
-list.addEventListener('click', event => {
-    console.log(event.target.classList);
-    if (event.target.classList.contains('js-delete-todo')) {
-        const itemKey = event.target.parentElement.dataset.key;
-        deleteName(itemKey);
-    }
-});
+// const list = document.querySelector('.js-name-list');
+// list.addEventListener('click', event => {
+//     console.log(event.target.classList);
+//     if (event.target.classList.contains('js-delete-todo')) {
+//         const itemKey = event.target.parentElement.dataset.key;
+//         deleteName(itemKey);
+//     }
+// });
 
 // -------------------------------------------------------
 // Event listener for the page to load.
 // -------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('nameList', JSON.stringify(nameList));
-    const ref = localStorage.getItem('nameList');
-    if (ref) {
-        nameList = JSON.parse(ref);
-        nameList.forEach(t => {
-            renderNames(t);
-        });
-    }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     localStorage.setItem('nameList', JSON.stringify(nameList));
+//     const ref = localStorage.getItem('nameList');
+//     if (ref) {
+//         nameList = JSON.parse(ref);
+//         nameList.forEach(t => {
+//             renderNames(t);
+//         });
+//     }
+// });
 
 // -------------------------------------------------------
 // Event listener for opening and closing the collapsible list.
 // -------------------------------------------------------
-var coll = document.getElementsByClassName("collapsible-button");
-var i;
+// var coll = document.getElementsByClassName("collapsible-button");
+// var i;
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
+// for (i = 0; i < coll.length; i++) {
+//     coll[i].addEventListener("click", function () {
+//         this.classList.toggle("active");
+//         var content = this.nextElementSibling;
+//         if (content.style.display === "block") {
+//             content.style.display = "none";
+//         } else {
+//             content.style.display = "block";
+//         }
+//     });
+// }
