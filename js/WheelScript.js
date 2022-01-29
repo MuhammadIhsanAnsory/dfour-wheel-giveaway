@@ -13,9 +13,10 @@ let theWheel = new Winwheel({
           { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FB9224', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#FB9224', text: 'Diskon 5%,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Diskon 5%', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FB9224', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Diskon 20% hair color', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FBE555', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
           { fillStyle: '#FB9224', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
           // { fillStyle: '#ffd84b', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
@@ -31,7 +32,7 @@ let theWheel = new Winwheel({
     'animation':           // Specify the animation to use.
     {
         'type': 'spinToStop',
-        'duration': 3,
+        'duration': 22,
         'spins': 10,
         'callbackFinished': alertPrize,
     }
