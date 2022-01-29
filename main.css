@@ -63,6 +63,8 @@ button:focus {
   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Style the button that is used to open and close the collapsible content */
