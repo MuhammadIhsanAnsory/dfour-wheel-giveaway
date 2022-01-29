@@ -21,7 +21,7 @@ let theWheel = new Winwheel({
     'animation':           // Specify the animation to use.
     {
         'type': 'spinToStop',
-        'duration': 3,
+        'duration': 15,
         'spins': 9,
         'callbackFinished': alertPrize,
     }
