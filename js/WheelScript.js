@@ -3,26 +3,36 @@ const TEXT_FONT_SIZE = 22;
 
 // Create new wheel object specifying the parameters at creation time.
 let theWheel = new Winwheel({
-    'numSegments': 9,     // Specify number of segments.
+    'numSegments': 10,     // Specify number of segments.
     'outerRadius': WHEEL_RADIUS,   // Set outer radius so wheel fits inside the background.
     'textFontSize': TEXT_FONT_SIZE,    // Set font size as desired.
     'segments':        // Define segments including colour and text.
         [
-          { fillStyle: '#ffd84b', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#f5ac27', text: 'Diskon Rp. 20.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#f2888b', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#f5ac27', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#ffd84b', text: 'Diskon 5%,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#e07477', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#ffd84b', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#f7ac00', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
-          { fillStyle: '#ea8b6d', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FBE555', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Diskon Rp. 20.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Diskon 5%,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FBE555', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FBE555', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
+          { fillStyle: '#FB9224', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#ffd84b', text: 'Angpau Rp. 50.000,-', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#f5ac27', text: 'Diskon Rp. 20.000,-', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#f2888b', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#f5ac27', text: 'Angpau Rp. 100.000,-', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#ffd84b', text: 'Diskon 5%,-', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#e07477', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#ffd84b', text: 'Angpau Rp. 40.000,-', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#f7ac00', text: 'Putar Lagi', id: Math.floor(Math.random() * Date.now()) },
+          // { fillStyle: '#ea8b6d', text: 'Diskon Rp. 10.000,-', id: Math.floor(Math.random() * Date.now()) },
         ],
     'animation':           // Specify the animation to use.
     {
         'type': 'spinToStop',
-        'duration': 15,
-        'spins': 9,
+        'duration': 3,
+        'spins': 10,
         'callbackFinished': alertPrize,
     }
 });
@@ -34,8 +44,8 @@ let theWheel = new Winwheel({
 function alertPrize(indicatedSegment) {
     // Do basic alert of the segment text.
     // You would probably want to do something more interesting with this information.
-    document.getElementById('info').innerHTML = "Selamat !!! Anda mendapatkan: " + indicatedSegment.text;
-    alert("Selamat !!! Anda mendapatkan: " + indicatedSegment.text);
+    document.getElementById('info').innerHTML = "Selamat! Anda mendapatkan :  <br> " + indicatedSegment.text + ' !!!';
+    alert("Selamat !!! Anda mendapatkan:" + indicatedSegment.text);
     resetWheel();
 }
 // =======================================================================================================================

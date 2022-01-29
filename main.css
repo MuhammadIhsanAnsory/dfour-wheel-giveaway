@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 html, body {
   height:100%;
   padding: 0;
   margin: 0;
   border: 0;
-  background: #a80000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #a80000, #780001);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #a80000, #780001); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('./resources/bg-game.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
@@ -27,6 +29,13 @@ button:focus {
   align-items: center;
 }
 
+.fw{
+  font-family: 'Indie Flower', cursive;
+  font-size: 42px;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  color: #ffd84b;
+}
+
 .arrow-container {
   text-align: center;
   width: 100%;
@@ -38,7 +47,7 @@ button:focus {
 .wheel-container {
   text-align: center;
   width: 100%;
-  margin-top: 35px;
+  padding-top: 15%;
 }
 
 .names-container {
