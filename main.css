@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #bc2740;
+
+}
+.bg-img {
   min-height:100vh;
   width:100%;
   min-width:800px;
   padding: 0;
   margin: 0;
   border: 0;
+  background-color: #bc2740;
   background-image: url('./resources/bg-game.png');
   background-size: cover;
   background-repeat: no-repeat;
